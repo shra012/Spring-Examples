@@ -1,7 +1,7 @@
 plugins {
-	id 'org.springframework.boot' version '2.1.5.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
-	id 'java'
+    id 'org.springframework.boot' version '2.1.5.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'java'
 }
 
 group = 'com.cloud.config.client'
@@ -9,27 +9,27 @@ version = '0.0.1'
 sourceCompatibility = '1.8'
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 ext {
-	set('springBootAdminVersion', "2.1.5")
-	set('springCloudVersion', "Greenwich.SR4")
+    set('springBootAdminVersion', "2.1.5")
+    set('springCloudVersion', "Greenwich.SR4")
 }
 
 dependencies {
-	implementation 'de.codecentric:spring-boot-admin-starter-client'
-	implementation 'org.springframework.cloud:spring-cloud-config-server'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
+    implementation 'de.codecentric:spring-boot-admin-starter-client'
+    implementation 'org.springframework.cloud:spring-cloud-config-server'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
 }
 
 dependencyManagement {
-	imports {
-		mavenBom "de.codecentric:spring-boot-admin-dependencies:${springBootAdminVersion}"
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-	}
+    imports {
+        mavenBom "de.codecentric:spring-boot-admin-dependencies:${springBootAdminVersion}"
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
 }
 
 import org.gradle.internal.os.OperatingSystem
@@ -60,8 +60,8 @@ if (OperatingSystem.current().isWindows()) {
 } else {
     bootRun {
         systemProperties = System.properties
+    }
 }
-
 test {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
