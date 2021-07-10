@@ -2,11 +2,3 @@ kafkaclients:
   topics:
     - simple.producer
     - complex.producer
-
-spring:
-  kafka:
-    producer:
-      cliend-id: rest-producer
-      bootstrap-servers: localhost:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer

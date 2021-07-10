@@ -1,0 +1,16 @@
+# KafkaClientsConfiguration
+kafkaclients:
+  bootstrap-servers: localhost:9092
+  invoice-topic: invoice
+  group-id: spring.consumer.1
+
+# Local Logging Properties
+logging:
+  level:
+    root: INFO
+    com:
+      shra012:
+        springkafkaclients: DEBUG
+    org:
+      springframework:
+        web: INFO
