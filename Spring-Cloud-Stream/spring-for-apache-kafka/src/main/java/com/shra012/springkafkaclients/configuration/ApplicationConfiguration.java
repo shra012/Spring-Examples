@@ -37,8 +37,8 @@ public class ApplicationConfiguration {
 
     @Bean
     public KafkaTemplate<String, String> stringValueKafkaTemplate(final KafkaClientsConfiguration kafkaClientsConfiguration) {
-        DefaultKafkaProducerFactory<String, String> producerFactory =
-                new DefaultKafkaProducerFactory<>(Map.of(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaClientsConfiguration.getBootstrapServers(),
+        var producerFactory =
+                new DefaultKafkaProducerFactory<String, String>(Map.of(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaClientsConfiguration.getBootstrapServers(),
                         ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class,
                         ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class));
         return new KafkaTemplate<>(producerFactory);
@@ -46,7 +46,7 @@ public class ApplicationConfiguration {
 
     @Bean
     public KafkaTemplate<String, Object> jsonValueKafkaTemplate(final KafkaClientsConfiguration kafkaClientsConfiguration) {
-        DefaultKafkaProducerFactory<String, Object> producerFactory = new DefaultKafkaProducerFactory<>(
+        var producerFactory = new DefaultKafkaProducerFactory<String, Object>(
                 Map.of(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaClientsConfiguration.getBootstrapServers(),
                         ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class,
                         ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class));
@@ -67,15 +67,14 @@ public class ApplicationConfiguration {
 
     @Bean
     public ConcurrentKafkaListenerContainerFactory<String, Object> kafkaListenerContainerFactory(final KafkaClientsConfiguration kafkaClientsConfiguration) {
-        DefaultKafkaConsumerFactory<String, Object> consumerFactory = new DefaultKafkaConsumerFactory<>(
+        var consumerFactory = new DefaultKafkaConsumerFactory<>(
                 Map.of(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaClientsConfiguration.getBootstrapServers(),
                         ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class,
                         ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class,
                         ConsumerConfig.GROUP_ID_CONFIG, kafkaClientsConfiguration.getGroupId(),
-                JsonDeserializer.TRUSTED_PACKAGES, "com.shra012.springkafkaclients.model"));
+                        JsonDeserializer.TRUSTED_PACKAGES, "com.shra012.springkafkaclients.model"));
 
-        ConcurrentKafkaListenerContainerFactory<String, Object> factory =
-                new ConcurrentKafkaListenerContainerFactory<>();
+        var factory = new ConcurrentKafkaListenerContainerFactory<String, Object>();
         factory.setConsumerFactory(consumerFactory);
         factory.setErrorHandler(new SeekToCurrentErrorHandler(new FixedBackOff(0L, 2L)));
         return factory;
