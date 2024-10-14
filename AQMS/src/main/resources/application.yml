@@ -1,0 +1,17 @@
+aqms:
+  datasource:
+    oracle-1:
+      url: jdbc:oracle:thin:@//oracle2.shra012.com:1521/FREEPDB1
+      username: example_schema
+      password: pwd
+      driver-class-name: oracle.jdbc.OracleDriver
+    oracle-2:
+      url: jdbc:oracle:thin:@//oracle1.shra012.com:1521/FREEPDB1
+      username: example_schema
+      password: pwd
+      driver-class-name: oracle.jdbc.OracleDriver
+spring:
+  application:
+    name: AQMS
+  autoconfigure:
+    exclude: com.oracle.database.spring.ucp.UCPAutoConfiguration
