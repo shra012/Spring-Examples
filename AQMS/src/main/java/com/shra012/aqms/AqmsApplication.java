@@ -1,6 +1,6 @@
-package com.example.aqms;
+package com.shra012.aqms;
 
-import com.example.aqms.configuration.AQMSProperties;
+import com.shra012.aqms.configuration.AQMSProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

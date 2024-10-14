@@ -1,4 +1,4 @@
-package com.example.aqms.publisher;
+package com.shra012.aqms.publisher;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jms.core.JmsTemplate;

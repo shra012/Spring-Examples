@@ -12,6 +12,6 @@ aqms:
       driver-class-name: oracle.jdbc.OracleDriver
 spring:
   application:
-    name: AQMS
+    name: Spring-Oracle-Advanced-Queues
   autoconfigure:
     exclude: com.oracle.database.spring.ucp.UCPAutoConfiguration

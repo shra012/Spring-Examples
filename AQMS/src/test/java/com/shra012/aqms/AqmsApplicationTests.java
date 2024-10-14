@@ -1,4 +1,4 @@
-package com.example.aqms;
+package com.shra012.aqms;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

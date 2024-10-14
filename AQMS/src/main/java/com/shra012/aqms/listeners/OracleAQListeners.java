@@ -1,4 +1,4 @@
-package com.example.aqms.listeners;
+package com.shra012.aqms.listeners;
 
 import jakarta.jms.JMSException;
 import jakarta.jms.Message;

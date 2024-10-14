@@ -1,4 +1,4 @@
-package com.example.aqms.configuration;
+package com.shra012.aqms.configuration;
 
 import lombok.Builder;
 import lombok.Getter;

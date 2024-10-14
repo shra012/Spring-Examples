@@ -1,7 +1,7 @@
-package com.example.aqms.configuration;
+package com.shra012.aqms.configuration;
 
-import com.example.aqms.listeners.OracleAQListeners;
-import com.example.aqms.publisher.MessagePushService;
+import com.shra012.aqms.listeners.OracleAQListeners;
+import com.shra012.aqms.publisher.MessagePushService;
 import jakarta.jms.ConnectionFactory;
 import jakarta.jms.JMSException;
 import jakarta.jms.Session;
