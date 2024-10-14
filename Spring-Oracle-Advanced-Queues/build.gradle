@@ -1,5 +1,6 @@
 plugins {
 	id 'java'
+	id 'idea'
 	id 'org.springframework.boot' version '3.3.4'
 	id 'io.spring.dependency-management' version '1.1.6'
 }
@@ -15,6 +16,13 @@ java {
 
 repositories {
 	mavenCentral()
+}
+
+idea {
+	module {
+		// Exclude the "generated" folder in IntelliJ IDEA
+		excludeDirs += file('deploy')
+	}
 }
 
 dependencies {
