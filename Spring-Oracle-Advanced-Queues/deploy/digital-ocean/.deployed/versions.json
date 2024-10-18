@@ -1,0 +1,18 @@
+[
+  {
+    "apihost": "https://faas-blr1-8177d592.doserverless.co",
+    "namespace": "fn-6efb6306-435e-4a92-8f94-2ea7dce65d46",
+    "packageVersions": {
+      "requests": {
+        "version": "0.0.18",
+        "digest": "e3f0dca30cb8e6c347531f58ee62c7764686b6427a46bb286dbd43a389afcd3d"
+      }
+    },
+    "actionVersions": {
+      "requests/provision-oracle-db": {
+        "version": "0.0.20",
+        "digest": "97d22578630c5778b49b921a0fa17fb5aac8cc62fbd31c7c8bc6fb2e388225a1"
+      }
+    }
+  }
+]

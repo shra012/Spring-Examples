@@ -1,0 +1,10 @@
+packages:
+  - name: requests
+    actions:
+      - name: provision-oracle-db
+        runtime: python:default
+        environment:
+          DIGITALOCEAN_TOKEN: ${DIGITALOCEAN_TOKEN}
+        limits:
+          memory: 128
+          timeout: 30000

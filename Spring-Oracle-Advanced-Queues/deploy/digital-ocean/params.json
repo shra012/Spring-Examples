@@ -1,0 +1,11 @@
+{
+  "action_type": "delete",
+  "body": {
+    "snapshot_name": "oracle-ubuntu-s-2vcpu-4gb-amd-blr1",
+    "droplet_name": "oracle-1",
+    "tag_name": "oracle",
+    "ssh_key_name": "Shravankumars-MacBook-Air.local",
+    "domain_name": "shra012.com",
+    "subdomain_name": "oracle1"
+  }
+}
