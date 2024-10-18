@@ -1,0 +1,27 @@
+name: Deploy function to DigitalOcean
+
+on:
+  push:
+    paths:
+      - 'Spring-Oracle-Advanced-Queues/deploy/digital-ocean/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_TOKEN }}
+
+      - name: Export DigitalOcean Token
+        run: echo "DIGITALOCEAN_ACCESS_TOKEN=${{ secrets.DIGITALOCEAN_TOKEN }}" >> $GITHUB_ENV
+
+      - name: Deploy to DigitalOcean Functions
+        run: |
+          cd Spring-Oracle-Advanced-Queues/deploy/digital-ocean
+          doctl serverless deploy .
