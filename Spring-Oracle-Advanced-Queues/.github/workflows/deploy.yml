@@ -24,4 +24,5 @@ jobs:
       - name: Deploy to DigitalOcean Functions
         run: |
           cd Spring-Oracle-Advanced-Queues/deploy/digital-ocean
+          doctl serverless install
           doctl serverless deploy .
