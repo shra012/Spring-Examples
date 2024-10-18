@@ -25,4 +25,5 @@ jobs:
         run: |
           cd Spring-Oracle-Advanced-Queues/deploy/digital-ocean
           doctl serverless install
+          doctl serverless connect provision-resources
           doctl serverless deploy .
